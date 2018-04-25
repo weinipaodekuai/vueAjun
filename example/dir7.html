@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>v-pre/v-cloak/v-once</title>
+    <style>
+        
+    </style>
+</head>
+    
+<body>
+
+    <h1>hello vue2.0</h1>
+    <hr>
+    <div id="app">
+        <h3>就是要看{ { message } }</h3>
+        <div v-pre>{{message}}</div>
+
+        <hr>
+        <h3>v-cloak 渲染完成之后，才显示！</h3>
+        <div v-cloak>
+            {{ message }}
+        </div>
+
+        <hr>
+        <div v-once>第一次绑定的值：{{message}}</div>
+        <div><input type="text" v-model="message"></div>
+    </div>
+
+
+  
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message:"shbo",
+            },
+            methods:{
+              
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

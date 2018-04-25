@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/jquery-1.11.3.js"></script>
+    <script src="../assets/vue.min.js"></script>
+
+    <!-- <title>Early Examples Demo</title> -->
+</head>
+<body>
+    <h1>Early Examples Demo</h1>
+    <hr>
+    
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"halo!"
+            },
+            //在vue中使用jq
+            mounted:function(){
+                $("#app").html("i am jq!");
+            },
+            methods:{
+                add:function(){
+                    console.log("add 了");
+                }
+            }
+        })
+
+        app.add();
+    </script>
+
+</body>
+</html>

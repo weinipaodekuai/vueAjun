@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>v-if/v-else/v-show</title>
+</head>
+<body>
+    
+    <h1>hello vue2.0</h1>
+    <hr>
+    <div id="app">
+
+        <div v-if="isLogin">你好：ajun</div>
+        <div v-else>请先登录</div>
+
+
+        <!--注意： v-show 页面已经渲染，只是css隐藏 -->
+        <div v-show="isLogin">你好：JSPang</div>
+        
+    </div>
+
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+                isLogin:false,
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

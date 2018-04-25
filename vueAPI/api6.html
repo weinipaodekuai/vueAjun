@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>component</title>
+</head>
+<body>
+    <h1>component-1</h1>
+    <hr>
+    <div id="app">
+        <ajun></ajun>
+
+        <hr>
+
+        <panda></panda>
+        
+        <p><button @click=""></button></p>
+    </div>
+
+    
+    <script type="text/javascript">
+
+        var extendsObj={
+            updated:function(){
+                                                                    
+            }
+        }
+
+        Vue.component("ajun",{
+            template:`<div style="color:#f00">我是全局组件</div>`
+        });
+        
+        var app=new Vue({
+            el:"#app",
+            components:{
+                "panda":{
+                    template:`<div style="color:#00f">我是局部组件</div>`            
+                }
+            }        
+        });
+
+    </script>
+
+
+</body>
+</html>

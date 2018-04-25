@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>Vue.extend扩展实例构造器</title>
+</head>
+
+<body>
+
+    <h1>hello vue2.0</h1>
+    <hr>
+
+
+
+    <div id="author"></div>
+
+
+    <script>
+
+   
+
+
+        //定义构造器
+        var authorUrl=Vue.extend({
+            template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+            data:function(){
+                return{
+                    authorName:"ajun",
+                    authorUrl:"http://www.mi-tea.cn/"
+                }
+            }
+        });
+        
+        //挂载构造器
+        new authorUrl().$mount("#author");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<template>
+  <div>
+      <h2>{{msg}}</h2>
+
+      <div>
+          <router-link to="/hi1"></router-link>
+          <router-link to="/hi2"></router-link>
+      </div>
+      <router-view></router-view>
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'hi',
+  data () {
+    return {
+      msg: 'I am Hi.'
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

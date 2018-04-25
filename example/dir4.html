@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>v-on</title>
+</head>
+
+<body>
+
+    <h1>hello vue2.0</h1>
+    <hr>
+    <div id="app">
+        得分：<span v-text="count"></span>
+
+        <button v-on:click="jia">加分</button>
+        <button v-on:click="jian">减分</button>
+
+        <!-- v-on可以用 @ 代替  -->
+        <button @click="jia">也能加分</button>
+
+        <input type="text" v-on:keyup.enter="onEnter" v-model="newCount">
+
+    </div>
+
+    <script>
+
+
+
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count:0,
+                newCount:0,
+            },
+            methods:{
+                jia:function(){
+                    this.count++;
+                },
+                jian:function(){
+                    this.count--;
+                },
+
+                onEnter:function(){
+                    this.count+=parseInt(this.newCount);
+                },
+
+
+            }
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/vue.min.js"></script>
+
+    <title>Examples Method Demo</title>
+</head>
+
+<body>
+    <h1>Examples Method Demo</h1>
+    <hr>
+
+    <div id="app">
+        {{message}}
+    </div>
+
+    <p>
+        <button onclick="des()">卸载</button>
+    </p>
+    <p>
+        <button onclick="reload()">刷新</button>
+    </p>
+    <p>
+        <button onclick="tick()">更改数据</button>
+    </p>
+
+    <script>
+
+        var aj = Vue.extend({
+            template: `<p>{{message}}</p>`,
+            data: function () {
+                return {
+                    message: "halo aj!"
+                }
+            },
+            mounted: function () {
+                console.log("mounted 创建");
+            },
+            destroyed: function () {
+                console.log("销毁之后");
+            },
+            updated: function () {
+                console.log("更新之后");
+            }
+        })
+
+        var vm = new aj().$mount("#app");
+
+        function des() {
+            vm.$destroy();
+        }
+
+        function reload() {
+            vm.$forceUpdate();
+        }
+
+        function tick() {
+            vm.message = "update message info";
+            vm.$nextTick(function () {
+                console.log("messgae 更新之后");
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

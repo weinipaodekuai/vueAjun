@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>template</title>
+</head>
+<body>
+    <h1>template</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <template id="temp2">
+        <h2>template 标签模板</h2>
+    </template>
+ 
+
+    <script type="x-template" id="temp3">
+        <h2 style="color:#0f0;">template 标签模板</h2>        
+    </script>
+
+    <p>Template的三种写法，以后学习到vue-cli的时候还会学到一种xxx.vue的写法。</p>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"halo",
+            },
+            template:"#temp3"
+            // `
+            // <h2 style="color:#f00;">选项模板</h2>
+            // `
+        });
+
+    </script>
+
+
+</body>
+</html>

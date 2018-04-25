@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/vue.min.js"></script>
+    <title>methods Option</title>
+</head>
+<body>
+    <h1>methods Option</h1>
+    <hr>
+    <div id="app">
+        {{ a }}
+        <p><button @click="add">add</button></p>
+    </div>
+ 
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                a:1
+            },
+            methods:{
+                add:function(){
+                    this.a++
+                }
+            }
+        })
+    </script>
+</body>
+</html>

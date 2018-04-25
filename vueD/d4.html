@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/jquery-1.11.3.js"></script>
+    <script src="../assets/vue.min.js"></script>
+
+    <title>Early Examples Demo</title>
+</head>
+
+<body>
+    <h1>Early Examples Demo</h1>
+    <hr>
+
+    <div id="app">
+        <ajun>
+            <span slot="blogUrl">{{ajunData.blogUrl}}</span>
+            <span slot="blogUrl">{{ajunData.blogUrl}}</span>
+        </ajun>
+
+    </div>
+
+    <template id="tep">
+        <div>
+            <p>blog地址:<slot name="blogUrl"></slot></p>
+            <p>网名:</p>
+        </div>
+    </template>
+
+
+    <script>
+        var ajun = {
+            template: "#tep"
+        }
+        var app = new Vue({
+            el: "#app",
+            data: {
+                ajunData: {
+                    blogUrl: 'http://www.baidu.com/',
+                    netName: 'ajun',
+                }
+            },
+            components: {
+                "ajun": ajun
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

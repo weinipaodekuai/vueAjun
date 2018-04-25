@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../assets/vue.min.js"></script>
+    <title>v-text & v-html</title>
+</head>
+
+<body>
+
+    <h1>hello vue2.0</h1>
+    <hr>
+    <div id="app">
+        <span>{{message}}</span>=
+        <span v-text="message"></span>
+        <br>
+        
+        <span v-html="msgHtml"></span>
+
+
+    </div>
+
+    <script>
+
+
+
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message:'halo vue!',
+                msgHtml:'<h2>HALO VUE!</h2>'
+
+            },
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>
